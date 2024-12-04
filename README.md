@@ -1,13 +1,13 @@
 # FeatherLume
 
-FeatherLume is a modern, lightweight web starter project designed for rapid development of web applications. It integrates technologies like **Ionic**, **Alpine.js**, **HTMX**, **TailwindCSS**, **Firebase** and **Capacitor**, enabling a powerful and flexible environment to build scalable, mobile-first web apps with minimal setup.
+FeatherLume is a modern, lightweight web starter project designed for rapid development of web applications. It integrates technologies like **Ionic**, **Petite Vue**, **HTMX**, **TailwindCSS**, **Firebase** and **Capacitor**, enabling a powerful and flexible environment to build scalable, mobile-first web apps with minimal setup.
 
 ---
 
 ## Features
 
 - **Ionic**: A comprehensive set of mobile-first UI components.
-- **Alpine.js**: A minimal JavaScript framework for adding interactivity.
+- **Petite Vue**: A minimal JavaScript framework for adding interactivity.
 - **HTMX**: Fetch, swap, and update content dynamically with ease.
 - **TailwindCSS**: A utility-first CSS framework for fast and flexible styling.
 - **Firebase**: Easy integration with Firebase for backend and database functionality.

@@ -28,6 +28,6 @@ copyRecursiveSync(sourceDir, path.resolve(targetDir));
 console.log("Installing dependencies...");
 execSync(`cd ${targetDir} && npm install`, { stdio: "inherit" });
 
-console.log("All set! Run:");
+console.log("\nAll set! Run:");
 console.log(`  cd ${targetDir}`);
 console.log("  npm start");

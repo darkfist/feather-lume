@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Path to your project's source code
-const sourceDir = path.join(__dirname, "..");
+const sourceDir = path.join(__dirname, "..", "src");
 
 // Output file for the generated imports
 const outputFilePath = path.join(__dirname, "ionic.imports.js");
@@ -18,26 +18,23 @@ async function findUsedComponents(dir) {
   let usedComponents = new Set();
 
   for (const file of files) {
-    if (file.name === "index.html") {
-      const filePath = path.join(dir, file.name);
-      if (file.isDirectory()) {
-        const subDirComponents = await findUsedComponents(filePath);
-        subDirComponents.forEach((c) => usedComponents.add(c));
-        
-      } else if (file.name.endsWith(".js") || file.name.endsWith(".html")) {
-        const content = await fs.promises.readFile(filePath, "utf-8");
+    const filePath = path.join(dir, file.name);
+    if (file.isDirectory()) {
+      const subDirComponents = await findUsedComponents(filePath);
+      subDirComponents.forEach((c) => usedComponents.add(c));
+    } else if (file.name.endsWith(".js") || file.name.endsWith(".html")) {
+      const content = await fs.promises.readFile(filePath, "utf-8");
 
-        // Match for 'ion-' elements that are enclosed in < >
-        const matches = content.match(/<\s*(ion-[a-z\-]+)\s*[^>]*>/g) || [];
+      // Match for 'ion-' elements that are enclosed in < >
+      const matches = content.match(/<\s*(ion-[a-z\-]+)\s*[^>]*>/g) || [];
 
-        matches.forEach((match) => {
-          // Extract the component name (ignoring extra spaces, attributes)
-          const component = match.match(/ion-[a-z\-]+/);
-          if (component) {
-            usedComponents.add(component[0]);
-          }
-        });
-      }
+      matches.forEach((match) => {
+        // Extract the component name (ignoring extra spaces, attributes)
+        const component = match.match(/ion-[a-z\-]+/);
+        if (component) {
+          usedComponents.add(component[0]);
+        }
+      });
     }
   }
 

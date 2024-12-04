@@ -1,0 +1,17 @@
+<div v-scope="hello()" class="bg-gray-900 text-gray-200">
+  <ion-app>
+    <load src="./components/header.html" />
+
+    <ion-content class="ion-padding">
+      <load src="./components/hero.html" />
+
+      <section v-scope="card()" id="cardListSection" class="my-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div v-for="(card, index) in cardList" :key="index">
+          <load src="./components/card.html" title="{{card.title}}" description="{{card.description}}" />
+        </div>
+      </section>
+    </ion-content>
+
+    <load src="./components/footer.html" />
+  </ion-app>
+</div>

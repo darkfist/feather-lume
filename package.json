@@ -1,12 +1,12 @@
 {
   "name": "create-feather-lume",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI tool to create FeatherLume starter project",
   "github": "https://github.com/darkfist/feather-lume",
   "bin": {
     "create-feather-lume": "./bin/create-feather-lume.js"
   },
-  "keywords": ["starter", "featherlume", "ionic", "tailwindcss", "firebase", "alpine", "HTMX","capacitor"],
+  "keywords": ["starter", "featherlume", "ionic", "tailwindcss", "firebase", "petite-vue", "HTMX","capacitor"],
   "author": "Nishant Ranjan",
   "license": "MIT",
   "files": ["bin", "template"],

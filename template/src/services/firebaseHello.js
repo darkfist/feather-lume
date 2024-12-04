@@ -1,4 +1,4 @@
-import firestore from "../project-configs/firebase.config";
+import firestore from "../../configs/firebase.config";
 import { collection, getDocs } from "firebase/firestore";
 
 const firebaseHello = async () => {

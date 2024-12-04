@@ -1,21 +1,9 @@
 import { defineConfig } from "vite";
+import injectHTML from "vite-plugin-html-inject";
 
 export default defineConfig({
   css: {
     postcss: "./postcss.config.js",
   },
-  plugins: [AlpineVitePlugin()], // Hot Reload Plugin for Vite
+  plugins: [injectHTML()],
 });
-
-function AlpineVitePlugin() {
-  return {
-    name: "alpine-vite-plugin",
-    handleHotUpdate({ file, server }) {
-      // hot reload for any file change
-      server.ws.send({
-        type: "full-reload",
-        path: "*",
-      });
-    },
-  };
-}
