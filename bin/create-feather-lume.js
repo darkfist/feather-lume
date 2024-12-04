@@ -25,9 +25,22 @@ const copyRecursiveSync = (src, dest) => {
 
 console.log(`Creating a new FeatherLume app in ${targetDir}...`);
 copyRecursiveSync(sourceDir, path.resolve(targetDir));
+
+// Rename 'gitignore' back to '.gitignore' in the target directory
+const renamedGitignore = path.join(targetDir, "gitignore");
+if (fs.existsSync(renamedGitignore)) {
+  fs.renameSync(renamedGitignore, path.join(targetDir, ".gitignore"));
+}
+
+// Rename 'env' back to '.env' in the target directory
+const renamedEnv = path.join(targetDir, "env");
+if (fs.existsSync(renamedEnv)) {
+  fs.renameSync(renamedEnv, path.join(targetDir, ".env"));
+}
+
 console.log("Installing dependencies...");
 execSync(`cd ${targetDir} && npm install`, { stdio: "inherit" });
 
 console.log("\nAll set! Run:");
 console.log(`  cd ${targetDir}`);
-console.log("  npm start");
+console.log("  npm start\n");
