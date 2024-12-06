@@ -1,12 +1,14 @@
 const card = () => {
   const templateData = [
-    { title: "Feature One", description: "Build modern apps with pre-configured tools like Petite Vue and Firebase." },
-    { title: "Feature Two", description: "Designed to be lightweight and easy to use." },
-    { title: "Feature Three", description: "Leverage Ionic for a beautiful, responsive UI." },
     {
-      title: "HTMX",
-      description:
-        "Build modern, interactive web experiences with minimal JavaScript using htmx. Fetch, swap, and update content dynamically with ease.",
+      title: "Feature One",
+      description: "Build modern apps with pre-configured tools like Petite Vue and Pocketbase.",
+    },
+    { title: "Feature Two", description: "Designed to be lightweight and easy to use." },
+    { title: "Feature Three", description: "Leverage TailwindCSS for a beautiful, responsive UI." },
+    {
+      title: "Pocketbase",
+      description: "Easy integration with Pocketbase for backend and database functionality.",
     },
     {
       title: "TailwindCSS",
